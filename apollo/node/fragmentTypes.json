@@ -1,0 +1,1 @@
+{"__schema":{"types":[{"kind":"INTERFACE","name":"BaseAddress","possibleTypes":[{"name":"City"},{"name":"Street"},{"name":"HouseNumber"}]}]}}
