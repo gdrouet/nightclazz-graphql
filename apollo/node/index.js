@@ -15,7 +15,10 @@ const client = new ApolloClient({
     })
 });
 
+var query = process.argv.join(" ");
+
 client.query({
+    variables: {query : query},
     query: gql`
     fragment antennaFields on NearestAntenna {
         coordinates { latitude longitude }
@@ -28,9 +31,9 @@ client.query({
         city
         addressLabel
     }
-
-    {
-        search(query: "rue bellefontaine avesnes sur helpe") {
+    
+    query search($query: String!) {
+        search(query: $query) {
             __typename
         ... on Street { street city zipCode }
         ... on City { city zipCode }
