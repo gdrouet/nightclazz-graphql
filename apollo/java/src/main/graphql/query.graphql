@@ -1,0 +1,37 @@
+fragment antennaFields on NearestAntenna {
+  __typename
+    coordinates { latitude longitude }
+    generation
+    provider
+    lastUpdate
+    status
+    dist
+  	insee
+  	city
+    addressLabel
+}
+
+query search($query: String!) {
+	search(query: $query) {
+		__typename
+    ... on Street { street city zipCode }
+    ... on City { city zipCode }
+    ... on HouseNumber { houseNumber street city zipCode }
+
+    nearestAntennaFromOrange: nearestAntenna(provider: ORANGE) {
+			...antennaFields
+    }
+
+    nearestAntennaFromBouygues: nearestAntenna(provider: BOUYGUES_TELECOM) {
+      ...antennaFields
+    }
+
+    nearestAntennaFromSfr: nearestAntenna(provider: SFR) {
+      ...antennaFields
+    }
+
+    nearestAntennaFromFree: nearestAntenna(provider: FREE) {
+      ...antennaFields
+    }
+  }
+}

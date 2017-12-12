@@ -1,0 +1,2173 @@
+{
+	"operations": [
+		{
+			"filePath": "C:\\Users\\pc\\Dropbox\\github\\nc-gql\\apollo\\java\\src\\main\\graphql\\query.graphql",
+			"operationName": "search",
+			"operationType": "query",
+			"rootType": "Query",
+			"variables": [
+				{
+					"name": "query",
+					"type": "String!"
+				}
+			],
+			"source": "query search($query: String!) {\n  search(query: $query) {\n    __typename\n    ... on Street {\n      street\n      city\n      zipCode\n    }\n    ... on City {\n      city\n      zipCode\n    }\n    ... on HouseNumber {\n      houseNumber\n      street\n      city\n      zipCode\n    }\n    nearestAntennaFromOrange: nearestAntenna(provider: ORANGE) {\n      ...antennaFields\n    }\n    nearestAntennaFromBouygues: nearestAntenna(provider: BOUYGUES_TELECOM) {\n      ...antennaFields\n    }\n    nearestAntennaFromSfr: nearestAntenna(provider: SFR) {\n      ...antennaFields\n    }\n    nearestAntennaFromFree: nearestAntenna(provider: FREE) {\n      ...antennaFields\n    }\n  }\n}",
+			"fields": [
+				{
+					"responseName": "search",
+					"fieldName": "search",
+					"type": "BaseAddress",
+					"args": [
+						{
+							"name": "query",
+							"value": {
+								"kind": "Variable",
+								"variableName": "query"
+							}
+						}
+					],
+					"isConditional": false,
+					"isDeprecated": false,
+					"deprecationReason": null,
+					"fields": [
+						{
+							"responseName": "__typename",
+							"fieldName": "__typename",
+							"type": "String!",
+							"isConditional": false
+						},
+						{
+							"responseName": "nearestAntennaFromOrange",
+							"fieldName": "nearestAntenna",
+							"type": "NearestAntenna",
+							"args": [
+								{
+									"name": "provider",
+									"value": "ORANGE"
+								}
+							],
+							"isConditional": false,
+							"isDeprecated": false,
+							"deprecationReason": null,
+							"fields": [
+								{
+									"responseName": "__typename",
+									"fieldName": "__typename",
+									"type": "String!",
+									"isConditional": false
+								},
+								{
+									"responseName": "coordinates",
+									"fieldName": "coordinates",
+									"type": "GPS",
+									"isConditional": false,
+									"isDeprecated": false,
+									"deprecationReason": null,
+									"fields": [
+										{
+											"responseName": "latitude",
+											"fieldName": "latitude",
+											"type": "Float",
+											"isConditional": false,
+											"isDeprecated": false,
+											"deprecationReason": null
+										},
+										{
+											"responseName": "longitude",
+											"fieldName": "longitude",
+											"type": "Float",
+											"isConditional": false,
+											"isDeprecated": false,
+											"deprecationReason": null
+										}
+									],
+									"fragmentSpreads": [],
+									"inlineFragments": []
+								},
+								{
+									"responseName": "generation",
+									"fieldName": "generation",
+									"type": "String",
+									"isConditional": false,
+									"isDeprecated": false,
+									"deprecationReason": null
+								},
+								{
+									"responseName": "provider",
+									"fieldName": "provider",
+									"type": "String",
+									"isConditional": false,
+									"isDeprecated": false,
+									"deprecationReason": null
+								},
+								{
+									"responseName": "lastUpdate",
+									"fieldName": "lastUpdate",
+									"type": "String",
+									"isConditional": false,
+									"isDeprecated": false,
+									"deprecationReason": null
+								},
+								{
+									"responseName": "status",
+									"fieldName": "status",
+									"type": "String",
+									"isConditional": false,
+									"isDeprecated": false,
+									"deprecationReason": null
+								},
+								{
+									"responseName": "dist",
+									"fieldName": "dist",
+									"type": "Int",
+									"isConditional": false,
+									"isDeprecated": false,
+									"deprecationReason": null
+								},
+								{
+									"responseName": "insee",
+									"fieldName": "insee",
+									"type": "String",
+									"isConditional": false,
+									"isDeprecated": false,
+									"deprecationReason": null
+								},
+								{
+									"responseName": "city",
+									"fieldName": "city",
+									"type": "String",
+									"isConditional": false,
+									"isDeprecated": false,
+									"deprecationReason": null
+								},
+								{
+									"responseName": "addressLabel",
+									"fieldName": "addressLabel",
+									"type": "String",
+									"isConditional": false,
+									"isDeprecated": false,
+									"deprecationReason": null
+								}
+							],
+							"fragmentSpreads": [
+								"antennaFields"
+							],
+							"inlineFragments": []
+						},
+						{
+							"responseName": "nearestAntennaFromBouygues",
+							"fieldName": "nearestAntenna",
+							"type": "NearestAntenna",
+							"args": [
+								{
+									"name": "provider",
+									"value": "BOUYGUES_TELECOM"
+								}
+							],
+							"isConditional": false,
+							"isDeprecated": false,
+							"deprecationReason": null,
+							"fields": [
+								{
+									"responseName": "__typename",
+									"fieldName": "__typename",
+									"type": "String!",
+									"isConditional": false
+								},
+								{
+									"responseName": "coordinates",
+									"fieldName": "coordinates",
+									"type": "GPS",
+									"isConditional": false,
+									"isDeprecated": false,
+									"deprecationReason": null,
+									"fields": [
+										{
+											"responseName": "latitude",
+											"fieldName": "latitude",
+											"type": "Float",
+											"isConditional": false,
+											"isDeprecated": false,
+											"deprecationReason": null
+										},
+										{
+											"responseName": "longitude",
+											"fieldName": "longitude",
+											"type": "Float",
+											"isConditional": false,
+											"isDeprecated": false,
+											"deprecationReason": null
+										}
+									],
+									"fragmentSpreads": [],
+									"inlineFragments": []
+								},
+								{
+									"responseName": "generation",
+									"fieldName": "generation",
+									"type": "String",
+									"isConditional": false,
+									"isDeprecated": false,
+									"deprecationReason": null
+								},
+								{
+									"responseName": "provider",
+									"fieldName": "provider",
+									"type": "String",
+									"isConditional": false,
+									"isDeprecated": false,
+									"deprecationReason": null
+								},
+								{
+									"responseName": "lastUpdate",
+									"fieldName": "lastUpdate",
+									"type": "String",
+									"isConditional": false,
+									"isDeprecated": false,
+									"deprecationReason": null
+								},
+								{
+									"responseName": "status",
+									"fieldName": "status",
+									"type": "String",
+									"isConditional": false,
+									"isDeprecated": false,
+									"deprecationReason": null
+								},
+								{
+									"responseName": "dist",
+									"fieldName": "dist",
+									"type": "Int",
+									"isConditional": false,
+									"isDeprecated": false,
+									"deprecationReason": null
+								},
+								{
+									"responseName": "insee",
+									"fieldName": "insee",
+									"type": "String",
+									"isConditional": false,
+									"isDeprecated": false,
+									"deprecationReason": null
+								},
+								{
+									"responseName": "city",
+									"fieldName": "city",
+									"type": "String",
+									"isConditional": false,
+									"isDeprecated": false,
+									"deprecationReason": null
+								},
+								{
+									"responseName": "addressLabel",
+									"fieldName": "addressLabel",
+									"type": "String",
+									"isConditional": false,
+									"isDeprecated": false,
+									"deprecationReason": null
+								}
+							],
+							"fragmentSpreads": [
+								"antennaFields"
+							],
+							"inlineFragments": []
+						},
+						{
+							"responseName": "nearestAntennaFromSfr",
+							"fieldName": "nearestAntenna",
+							"type": "NearestAntenna",
+							"args": [
+								{
+									"name": "provider",
+									"value": "SFR"
+								}
+							],
+							"isConditional": false,
+							"isDeprecated": false,
+							"deprecationReason": null,
+							"fields": [
+								{
+									"responseName": "__typename",
+									"fieldName": "__typename",
+									"type": "String!",
+									"isConditional": false
+								},
+								{
+									"responseName": "coordinates",
+									"fieldName": "coordinates",
+									"type": "GPS",
+									"isConditional": false,
+									"isDeprecated": false,
+									"deprecationReason": null,
+									"fields": [
+										{
+											"responseName": "latitude",
+											"fieldName": "latitude",
+											"type": "Float",
+											"isConditional": false,
+											"isDeprecated": false,
+											"deprecationReason": null
+										},
+										{
+											"responseName": "longitude",
+											"fieldName": "longitude",
+											"type": "Float",
+											"isConditional": false,
+											"isDeprecated": false,
+											"deprecationReason": null
+										}
+									],
+									"fragmentSpreads": [],
+									"inlineFragments": []
+								},
+								{
+									"responseName": "generation",
+									"fieldName": "generation",
+									"type": "String",
+									"isConditional": false,
+									"isDeprecated": false,
+									"deprecationReason": null
+								},
+								{
+									"responseName": "provider",
+									"fieldName": "provider",
+									"type": "String",
+									"isConditional": false,
+									"isDeprecated": false,
+									"deprecationReason": null
+								},
+								{
+									"responseName": "lastUpdate",
+									"fieldName": "lastUpdate",
+									"type": "String",
+									"isConditional": false,
+									"isDeprecated": false,
+									"deprecationReason": null
+								},
+								{
+									"responseName": "status",
+									"fieldName": "status",
+									"type": "String",
+									"isConditional": false,
+									"isDeprecated": false,
+									"deprecationReason": null
+								},
+								{
+									"responseName": "dist",
+									"fieldName": "dist",
+									"type": "Int",
+									"isConditional": false,
+									"isDeprecated": false,
+									"deprecationReason": null
+								},
+								{
+									"responseName": "insee",
+									"fieldName": "insee",
+									"type": "String",
+									"isConditional": false,
+									"isDeprecated": false,
+									"deprecationReason": null
+								},
+								{
+									"responseName": "city",
+									"fieldName": "city",
+									"type": "String",
+									"isConditional": false,
+									"isDeprecated": false,
+									"deprecationReason": null
+								},
+								{
+									"responseName": "addressLabel",
+									"fieldName": "addressLabel",
+									"type": "String",
+									"isConditional": false,
+									"isDeprecated": false,
+									"deprecationReason": null
+								}
+							],
+							"fragmentSpreads": [
+								"antennaFields"
+							],
+							"inlineFragments": []
+						},
+						{
+							"responseName": "nearestAntennaFromFree",
+							"fieldName": "nearestAntenna",
+							"type": "NearestAntenna",
+							"args": [
+								{
+									"name": "provider",
+									"value": "FREE"
+								}
+							],
+							"isConditional": false,
+							"isDeprecated": false,
+							"deprecationReason": null,
+							"fields": [
+								{
+									"responseName": "__typename",
+									"fieldName": "__typename",
+									"type": "String!",
+									"isConditional": false
+								},
+								{
+									"responseName": "coordinates",
+									"fieldName": "coordinates",
+									"type": "GPS",
+									"isConditional": false,
+									"isDeprecated": false,
+									"deprecationReason": null,
+									"fields": [
+										{
+											"responseName": "latitude",
+											"fieldName": "latitude",
+											"type": "Float",
+											"isConditional": false,
+											"isDeprecated": false,
+											"deprecationReason": null
+										},
+										{
+											"responseName": "longitude",
+											"fieldName": "longitude",
+											"type": "Float",
+											"isConditional": false,
+											"isDeprecated": false,
+											"deprecationReason": null
+										}
+									],
+									"fragmentSpreads": [],
+									"inlineFragments": []
+								},
+								{
+									"responseName": "generation",
+									"fieldName": "generation",
+									"type": "String",
+									"isConditional": false,
+									"isDeprecated": false,
+									"deprecationReason": null
+								},
+								{
+									"responseName": "provider",
+									"fieldName": "provider",
+									"type": "String",
+									"isConditional": false,
+									"isDeprecated": false,
+									"deprecationReason": null
+								},
+								{
+									"responseName": "lastUpdate",
+									"fieldName": "lastUpdate",
+									"type": "String",
+									"isConditional": false,
+									"isDeprecated": false,
+									"deprecationReason": null
+								},
+								{
+									"responseName": "status",
+									"fieldName": "status",
+									"type": "String",
+									"isConditional": false,
+									"isDeprecated": false,
+									"deprecationReason": null
+								},
+								{
+									"responseName": "dist",
+									"fieldName": "dist",
+									"type": "Int",
+									"isConditional": false,
+									"isDeprecated": false,
+									"deprecationReason": null
+								},
+								{
+									"responseName": "insee",
+									"fieldName": "insee",
+									"type": "String",
+									"isConditional": false,
+									"isDeprecated": false,
+									"deprecationReason": null
+								},
+								{
+									"responseName": "city",
+									"fieldName": "city",
+									"type": "String",
+									"isConditional": false,
+									"isDeprecated": false,
+									"deprecationReason": null
+								},
+								{
+									"responseName": "addressLabel",
+									"fieldName": "addressLabel",
+									"type": "String",
+									"isConditional": false,
+									"isDeprecated": false,
+									"deprecationReason": null
+								}
+							],
+							"fragmentSpreads": [
+								"antennaFields"
+							],
+							"inlineFragments": []
+						}
+					],
+					"fragmentSpreads": [],
+					"inlineFragments": [
+						{
+							"typeCondition": "Street",
+							"possibleTypes": [
+								"Street"
+							],
+							"fields": [
+								{
+									"responseName": "__typename",
+									"fieldName": "__typename",
+									"type": "String!",
+									"isConditional": false
+								},
+								{
+									"responseName": "street",
+									"fieldName": "street",
+									"type": "String",
+									"isConditional": false,
+									"isDeprecated": false,
+									"deprecationReason": null
+								},
+								{
+									"responseName": "city",
+									"fieldName": "city",
+									"type": "String",
+									"isConditional": false,
+									"isDeprecated": false,
+									"deprecationReason": null
+								},
+								{
+									"responseName": "zipCode",
+									"fieldName": "zipCode",
+									"type": "String",
+									"isConditional": false,
+									"isDeprecated": false,
+									"deprecationReason": null
+								},
+								{
+									"responseName": "nearestAntennaFromOrange",
+									"fieldName": "nearestAntenna",
+									"type": "NearestAntenna",
+									"args": [
+										{
+											"name": "provider",
+											"value": "ORANGE"
+										}
+									],
+									"isConditional": false,
+									"isDeprecated": false,
+									"deprecationReason": null,
+									"fields": [
+										{
+											"responseName": "__typename",
+											"fieldName": "__typename",
+											"type": "String!",
+											"isConditional": false
+										},
+										{
+											"responseName": "coordinates",
+											"fieldName": "coordinates",
+											"type": "GPS",
+											"isConditional": false,
+											"isDeprecated": false,
+											"deprecationReason": null,
+											"fields": [
+												{
+													"responseName": "latitude",
+													"fieldName": "latitude",
+													"type": "Float",
+													"isConditional": false,
+													"isDeprecated": false,
+													"deprecationReason": null
+												},
+												{
+													"responseName": "longitude",
+													"fieldName": "longitude",
+													"type": "Float",
+													"isConditional": false,
+													"isDeprecated": false,
+													"deprecationReason": null
+												}
+											],
+											"fragmentSpreads": [],
+											"inlineFragments": []
+										},
+										{
+											"responseName": "generation",
+											"fieldName": "generation",
+											"type": "String",
+											"isConditional": false,
+											"isDeprecated": false,
+											"deprecationReason": null
+										},
+										{
+											"responseName": "provider",
+											"fieldName": "provider",
+											"type": "String",
+											"isConditional": false,
+											"isDeprecated": false,
+											"deprecationReason": null
+										},
+										{
+											"responseName": "lastUpdate",
+											"fieldName": "lastUpdate",
+											"type": "String",
+											"isConditional": false,
+											"isDeprecated": false,
+											"deprecationReason": null
+										},
+										{
+											"responseName": "status",
+											"fieldName": "status",
+											"type": "String",
+											"isConditional": false,
+											"isDeprecated": false,
+											"deprecationReason": null
+										},
+										{
+											"responseName": "dist",
+											"fieldName": "dist",
+											"type": "Int",
+											"isConditional": false,
+											"isDeprecated": false,
+											"deprecationReason": null
+										},
+										{
+											"responseName": "insee",
+											"fieldName": "insee",
+											"type": "String",
+											"isConditional": false,
+											"isDeprecated": false,
+											"deprecationReason": null
+										},
+										{
+											"responseName": "city",
+											"fieldName": "city",
+											"type": "String",
+											"isConditional": false,
+											"isDeprecated": false,
+											"deprecationReason": null
+										},
+										{
+											"responseName": "addressLabel",
+											"fieldName": "addressLabel",
+											"type": "String",
+											"isConditional": false,
+											"isDeprecated": false,
+											"deprecationReason": null
+										}
+									],
+									"fragmentSpreads": [
+										"antennaFields"
+									],
+									"inlineFragments": []
+								},
+								{
+									"responseName": "nearestAntennaFromBouygues",
+									"fieldName": "nearestAntenna",
+									"type": "NearestAntenna",
+									"args": [
+										{
+											"name": "provider",
+											"value": "BOUYGUES_TELECOM"
+										}
+									],
+									"isConditional": false,
+									"isDeprecated": false,
+									"deprecationReason": null,
+									"fields": [
+										{
+											"responseName": "__typename",
+											"fieldName": "__typename",
+											"type": "String!",
+											"isConditional": false
+										},
+										{
+											"responseName": "coordinates",
+											"fieldName": "coordinates",
+											"type": "GPS",
+											"isConditional": false,
+											"isDeprecated": false,
+											"deprecationReason": null,
+											"fields": [
+												{
+													"responseName": "latitude",
+													"fieldName": "latitude",
+													"type": "Float",
+													"isConditional": false,
+													"isDeprecated": false,
+													"deprecationReason": null
+												},
+												{
+													"responseName": "longitude",
+													"fieldName": "longitude",
+													"type": "Float",
+													"isConditional": false,
+													"isDeprecated": false,
+													"deprecationReason": null
+												}
+											],
+											"fragmentSpreads": [],
+											"inlineFragments": []
+										},
+										{
+											"responseName": "generation",
+											"fieldName": "generation",
+											"type": "String",
+											"isConditional": false,
+											"isDeprecated": false,
+											"deprecationReason": null
+										},
+										{
+											"responseName": "provider",
+											"fieldName": "provider",
+											"type": "String",
+											"isConditional": false,
+											"isDeprecated": false,
+											"deprecationReason": null
+										},
+										{
+											"responseName": "lastUpdate",
+											"fieldName": "lastUpdate",
+											"type": "String",
+											"isConditional": false,
+											"isDeprecated": false,
+											"deprecationReason": null
+										},
+										{
+											"responseName": "status",
+											"fieldName": "status",
+											"type": "String",
+											"isConditional": false,
+											"isDeprecated": false,
+											"deprecationReason": null
+										},
+										{
+											"responseName": "dist",
+											"fieldName": "dist",
+											"type": "Int",
+											"isConditional": false,
+											"isDeprecated": false,
+											"deprecationReason": null
+										},
+										{
+											"responseName": "insee",
+											"fieldName": "insee",
+											"type": "String",
+											"isConditional": false,
+											"isDeprecated": false,
+											"deprecationReason": null
+										},
+										{
+											"responseName": "city",
+											"fieldName": "city",
+											"type": "String",
+											"isConditional": false,
+											"isDeprecated": false,
+											"deprecationReason": null
+										},
+										{
+											"responseName": "addressLabel",
+											"fieldName": "addressLabel",
+											"type": "String",
+											"isConditional": false,
+											"isDeprecated": false,
+											"deprecationReason": null
+										}
+									],
+									"fragmentSpreads": [
+										"antennaFields"
+									],
+									"inlineFragments": []
+								},
+								{
+									"responseName": "nearestAntennaFromSfr",
+									"fieldName": "nearestAntenna",
+									"type": "NearestAntenna",
+									"args": [
+										{
+											"name": "provider",
+											"value": "SFR"
+										}
+									],
+									"isConditional": false,
+									"isDeprecated": false,
+									"deprecationReason": null,
+									"fields": [
+										{
+											"responseName": "__typename",
+											"fieldName": "__typename",
+											"type": "String!",
+											"isConditional": false
+										},
+										{
+											"responseName": "coordinates",
+											"fieldName": "coordinates",
+											"type": "GPS",
+											"isConditional": false,
+											"isDeprecated": false,
+											"deprecationReason": null,
+											"fields": [
+												{
+													"responseName": "latitude",
+													"fieldName": "latitude",
+													"type": "Float",
+													"isConditional": false,
+													"isDeprecated": false,
+													"deprecationReason": null
+												},
+												{
+													"responseName": "longitude",
+													"fieldName": "longitude",
+													"type": "Float",
+													"isConditional": false,
+													"isDeprecated": false,
+													"deprecationReason": null
+												}
+											],
+											"fragmentSpreads": [],
+											"inlineFragments": []
+										},
+										{
+											"responseName": "generation",
+											"fieldName": "generation",
+											"type": "String",
+											"isConditional": false,
+											"isDeprecated": false,
+											"deprecationReason": null
+										},
+										{
+											"responseName": "provider",
+											"fieldName": "provider",
+											"type": "String",
+											"isConditional": false,
+											"isDeprecated": false,
+											"deprecationReason": null
+										},
+										{
+											"responseName": "lastUpdate",
+											"fieldName": "lastUpdate",
+											"type": "String",
+											"isConditional": false,
+											"isDeprecated": false,
+											"deprecationReason": null
+										},
+										{
+											"responseName": "status",
+											"fieldName": "status",
+											"type": "String",
+											"isConditional": false,
+											"isDeprecated": false,
+											"deprecationReason": null
+										},
+										{
+											"responseName": "dist",
+											"fieldName": "dist",
+											"type": "Int",
+											"isConditional": false,
+											"isDeprecated": false,
+											"deprecationReason": null
+										},
+										{
+											"responseName": "insee",
+											"fieldName": "insee",
+											"type": "String",
+											"isConditional": false,
+											"isDeprecated": false,
+											"deprecationReason": null
+										},
+										{
+											"responseName": "city",
+											"fieldName": "city",
+											"type": "String",
+											"isConditional": false,
+											"isDeprecated": false,
+											"deprecationReason": null
+										},
+										{
+											"responseName": "addressLabel",
+											"fieldName": "addressLabel",
+											"type": "String",
+											"isConditional": false,
+											"isDeprecated": false,
+											"deprecationReason": null
+										}
+									],
+									"fragmentSpreads": [
+										"antennaFields"
+									],
+									"inlineFragments": []
+								},
+								{
+									"responseName": "nearestAntennaFromFree",
+									"fieldName": "nearestAntenna",
+									"type": "NearestAntenna",
+									"args": [
+										{
+											"name": "provider",
+											"value": "FREE"
+										}
+									],
+									"isConditional": false,
+									"isDeprecated": false,
+									"deprecationReason": null,
+									"fields": [
+										{
+											"responseName": "__typename",
+											"fieldName": "__typename",
+											"type": "String!",
+											"isConditional": false
+										},
+										{
+											"responseName": "coordinates",
+											"fieldName": "coordinates",
+											"type": "GPS",
+											"isConditional": false,
+											"isDeprecated": false,
+											"deprecationReason": null,
+											"fields": [
+												{
+													"responseName": "latitude",
+													"fieldName": "latitude",
+													"type": "Float",
+													"isConditional": false,
+													"isDeprecated": false,
+													"deprecationReason": null
+												},
+												{
+													"responseName": "longitude",
+													"fieldName": "longitude",
+													"type": "Float",
+													"isConditional": false,
+													"isDeprecated": false,
+													"deprecationReason": null
+												}
+											],
+											"fragmentSpreads": [],
+											"inlineFragments": []
+										},
+										{
+											"responseName": "generation",
+											"fieldName": "generation",
+											"type": "String",
+											"isConditional": false,
+											"isDeprecated": false,
+											"deprecationReason": null
+										},
+										{
+											"responseName": "provider",
+											"fieldName": "provider",
+											"type": "String",
+											"isConditional": false,
+											"isDeprecated": false,
+											"deprecationReason": null
+										},
+										{
+											"responseName": "lastUpdate",
+											"fieldName": "lastUpdate",
+											"type": "String",
+											"isConditional": false,
+											"isDeprecated": false,
+											"deprecationReason": null
+										},
+										{
+											"responseName": "status",
+											"fieldName": "status",
+											"type": "String",
+											"isConditional": false,
+											"isDeprecated": false,
+											"deprecationReason": null
+										},
+										{
+											"responseName": "dist",
+											"fieldName": "dist",
+											"type": "Int",
+											"isConditional": false,
+											"isDeprecated": false,
+											"deprecationReason": null
+										},
+										{
+											"responseName": "insee",
+											"fieldName": "insee",
+											"type": "String",
+											"isConditional": false,
+											"isDeprecated": false,
+											"deprecationReason": null
+										},
+										{
+											"responseName": "city",
+											"fieldName": "city",
+											"type": "String",
+											"isConditional": false,
+											"isDeprecated": false,
+											"deprecationReason": null
+										},
+										{
+											"responseName": "addressLabel",
+											"fieldName": "addressLabel",
+											"type": "String",
+											"isConditional": false,
+											"isDeprecated": false,
+											"deprecationReason": null
+										}
+									],
+									"fragmentSpreads": [
+										"antennaFields"
+									],
+									"inlineFragments": []
+								}
+							],
+							"fragmentSpreads": []
+						},
+						{
+							"typeCondition": "City",
+							"possibleTypes": [
+								"City"
+							],
+							"fields": [
+								{
+									"responseName": "__typename",
+									"fieldName": "__typename",
+									"type": "String!",
+									"isConditional": false
+								},
+								{
+									"responseName": "city",
+									"fieldName": "city",
+									"type": "String",
+									"isConditional": false,
+									"isDeprecated": false,
+									"deprecationReason": null
+								},
+								{
+									"responseName": "zipCode",
+									"fieldName": "zipCode",
+									"type": "String",
+									"isConditional": false,
+									"isDeprecated": false,
+									"deprecationReason": null
+								},
+								{
+									"responseName": "nearestAntennaFromOrange",
+									"fieldName": "nearestAntenna",
+									"type": "NearestAntenna",
+									"args": [
+										{
+											"name": "provider",
+											"value": "ORANGE"
+										}
+									],
+									"isConditional": false,
+									"isDeprecated": false,
+									"deprecationReason": null,
+									"fields": [
+										{
+											"responseName": "__typename",
+											"fieldName": "__typename",
+											"type": "String!",
+											"isConditional": false
+										},
+										{
+											"responseName": "coordinates",
+											"fieldName": "coordinates",
+											"type": "GPS",
+											"isConditional": false,
+											"isDeprecated": false,
+											"deprecationReason": null,
+											"fields": [
+												{
+													"responseName": "latitude",
+													"fieldName": "latitude",
+													"type": "Float",
+													"isConditional": false,
+													"isDeprecated": false,
+													"deprecationReason": null
+												},
+												{
+													"responseName": "longitude",
+													"fieldName": "longitude",
+													"type": "Float",
+													"isConditional": false,
+													"isDeprecated": false,
+													"deprecationReason": null
+												}
+											],
+											"fragmentSpreads": [],
+											"inlineFragments": []
+										},
+										{
+											"responseName": "generation",
+											"fieldName": "generation",
+											"type": "String",
+											"isConditional": false,
+											"isDeprecated": false,
+											"deprecationReason": null
+										},
+										{
+											"responseName": "provider",
+											"fieldName": "provider",
+											"type": "String",
+											"isConditional": false,
+											"isDeprecated": false,
+											"deprecationReason": null
+										},
+										{
+											"responseName": "lastUpdate",
+											"fieldName": "lastUpdate",
+											"type": "String",
+											"isConditional": false,
+											"isDeprecated": false,
+											"deprecationReason": null
+										},
+										{
+											"responseName": "status",
+											"fieldName": "status",
+											"type": "String",
+											"isConditional": false,
+											"isDeprecated": false,
+											"deprecationReason": null
+										},
+										{
+											"responseName": "dist",
+											"fieldName": "dist",
+											"type": "Int",
+											"isConditional": false,
+											"isDeprecated": false,
+											"deprecationReason": null
+										},
+										{
+											"responseName": "insee",
+											"fieldName": "insee",
+											"type": "String",
+											"isConditional": false,
+											"isDeprecated": false,
+											"deprecationReason": null
+										},
+										{
+											"responseName": "city",
+											"fieldName": "city",
+											"type": "String",
+											"isConditional": false,
+											"isDeprecated": false,
+											"deprecationReason": null
+										},
+										{
+											"responseName": "addressLabel",
+											"fieldName": "addressLabel",
+											"type": "String",
+											"isConditional": false,
+											"isDeprecated": false,
+											"deprecationReason": null
+										}
+									],
+									"fragmentSpreads": [
+										"antennaFields"
+									],
+									"inlineFragments": []
+								},
+								{
+									"responseName": "nearestAntennaFromBouygues",
+									"fieldName": "nearestAntenna",
+									"type": "NearestAntenna",
+									"args": [
+										{
+											"name": "provider",
+											"value": "BOUYGUES_TELECOM"
+										}
+									],
+									"isConditional": false,
+									"isDeprecated": false,
+									"deprecationReason": null,
+									"fields": [
+										{
+											"responseName": "__typename",
+											"fieldName": "__typename",
+											"type": "String!",
+											"isConditional": false
+										},
+										{
+											"responseName": "coordinates",
+											"fieldName": "coordinates",
+											"type": "GPS",
+											"isConditional": false,
+											"isDeprecated": false,
+											"deprecationReason": null,
+											"fields": [
+												{
+													"responseName": "latitude",
+													"fieldName": "latitude",
+													"type": "Float",
+													"isConditional": false,
+													"isDeprecated": false,
+													"deprecationReason": null
+												},
+												{
+													"responseName": "longitude",
+													"fieldName": "longitude",
+													"type": "Float",
+													"isConditional": false,
+													"isDeprecated": false,
+													"deprecationReason": null
+												}
+											],
+											"fragmentSpreads": [],
+											"inlineFragments": []
+										},
+										{
+											"responseName": "generation",
+											"fieldName": "generation",
+											"type": "String",
+											"isConditional": false,
+											"isDeprecated": false,
+											"deprecationReason": null
+										},
+										{
+											"responseName": "provider",
+											"fieldName": "provider",
+											"type": "String",
+											"isConditional": false,
+											"isDeprecated": false,
+											"deprecationReason": null
+										},
+										{
+											"responseName": "lastUpdate",
+											"fieldName": "lastUpdate",
+											"type": "String",
+											"isConditional": false,
+											"isDeprecated": false,
+											"deprecationReason": null
+										},
+										{
+											"responseName": "status",
+											"fieldName": "status",
+											"type": "String",
+											"isConditional": false,
+											"isDeprecated": false,
+											"deprecationReason": null
+										},
+										{
+											"responseName": "dist",
+											"fieldName": "dist",
+											"type": "Int",
+											"isConditional": false,
+											"isDeprecated": false,
+											"deprecationReason": null
+										},
+										{
+											"responseName": "insee",
+											"fieldName": "insee",
+											"type": "String",
+											"isConditional": false,
+											"isDeprecated": false,
+											"deprecationReason": null
+										},
+										{
+											"responseName": "city",
+											"fieldName": "city",
+											"type": "String",
+											"isConditional": false,
+											"isDeprecated": false,
+											"deprecationReason": null
+										},
+										{
+											"responseName": "addressLabel",
+											"fieldName": "addressLabel",
+											"type": "String",
+											"isConditional": false,
+											"isDeprecated": false,
+											"deprecationReason": null
+										}
+									],
+									"fragmentSpreads": [
+										"antennaFields"
+									],
+									"inlineFragments": []
+								},
+								{
+									"responseName": "nearestAntennaFromSfr",
+									"fieldName": "nearestAntenna",
+									"type": "NearestAntenna",
+									"args": [
+										{
+											"name": "provider",
+											"value": "SFR"
+										}
+									],
+									"isConditional": false,
+									"isDeprecated": false,
+									"deprecationReason": null,
+									"fields": [
+										{
+											"responseName": "__typename",
+											"fieldName": "__typename",
+											"type": "String!",
+											"isConditional": false
+										},
+										{
+											"responseName": "coordinates",
+											"fieldName": "coordinates",
+											"type": "GPS",
+											"isConditional": false,
+											"isDeprecated": false,
+											"deprecationReason": null,
+											"fields": [
+												{
+													"responseName": "latitude",
+													"fieldName": "latitude",
+													"type": "Float",
+													"isConditional": false,
+													"isDeprecated": false,
+													"deprecationReason": null
+												},
+												{
+													"responseName": "longitude",
+													"fieldName": "longitude",
+													"type": "Float",
+													"isConditional": false,
+													"isDeprecated": false,
+													"deprecationReason": null
+												}
+											],
+											"fragmentSpreads": [],
+											"inlineFragments": []
+										},
+										{
+											"responseName": "generation",
+											"fieldName": "generation",
+											"type": "String",
+											"isConditional": false,
+											"isDeprecated": false,
+											"deprecationReason": null
+										},
+										{
+											"responseName": "provider",
+											"fieldName": "provider",
+											"type": "String",
+											"isConditional": false,
+											"isDeprecated": false,
+											"deprecationReason": null
+										},
+										{
+											"responseName": "lastUpdate",
+											"fieldName": "lastUpdate",
+											"type": "String",
+											"isConditional": false,
+											"isDeprecated": false,
+											"deprecationReason": null
+										},
+										{
+											"responseName": "status",
+											"fieldName": "status",
+											"type": "String",
+											"isConditional": false,
+											"isDeprecated": false,
+											"deprecationReason": null
+										},
+										{
+											"responseName": "dist",
+											"fieldName": "dist",
+											"type": "Int",
+											"isConditional": false,
+											"isDeprecated": false,
+											"deprecationReason": null
+										},
+										{
+											"responseName": "insee",
+											"fieldName": "insee",
+											"type": "String",
+											"isConditional": false,
+											"isDeprecated": false,
+											"deprecationReason": null
+										},
+										{
+											"responseName": "city",
+											"fieldName": "city",
+											"type": "String",
+											"isConditional": false,
+											"isDeprecated": false,
+											"deprecationReason": null
+										},
+										{
+											"responseName": "addressLabel",
+											"fieldName": "addressLabel",
+											"type": "String",
+											"isConditional": false,
+											"isDeprecated": false,
+											"deprecationReason": null
+										}
+									],
+									"fragmentSpreads": [
+										"antennaFields"
+									],
+									"inlineFragments": []
+								},
+								{
+									"responseName": "nearestAntennaFromFree",
+									"fieldName": "nearestAntenna",
+									"type": "NearestAntenna",
+									"args": [
+										{
+											"name": "provider",
+											"value": "FREE"
+										}
+									],
+									"isConditional": false,
+									"isDeprecated": false,
+									"deprecationReason": null,
+									"fields": [
+										{
+											"responseName": "__typename",
+											"fieldName": "__typename",
+											"type": "String!",
+											"isConditional": false
+										},
+										{
+											"responseName": "coordinates",
+											"fieldName": "coordinates",
+											"type": "GPS",
+											"isConditional": false,
+											"isDeprecated": false,
+											"deprecationReason": null,
+											"fields": [
+												{
+													"responseName": "latitude",
+													"fieldName": "latitude",
+													"type": "Float",
+													"isConditional": false,
+													"isDeprecated": false,
+													"deprecationReason": null
+												},
+												{
+													"responseName": "longitude",
+													"fieldName": "longitude",
+													"type": "Float",
+													"isConditional": false,
+													"isDeprecated": false,
+													"deprecationReason": null
+												}
+											],
+											"fragmentSpreads": [],
+											"inlineFragments": []
+										},
+										{
+											"responseName": "generation",
+											"fieldName": "generation",
+											"type": "String",
+											"isConditional": false,
+											"isDeprecated": false,
+											"deprecationReason": null
+										},
+										{
+											"responseName": "provider",
+											"fieldName": "provider",
+											"type": "String",
+											"isConditional": false,
+											"isDeprecated": false,
+											"deprecationReason": null
+										},
+										{
+											"responseName": "lastUpdate",
+											"fieldName": "lastUpdate",
+											"type": "String",
+											"isConditional": false,
+											"isDeprecated": false,
+											"deprecationReason": null
+										},
+										{
+											"responseName": "status",
+											"fieldName": "status",
+											"type": "String",
+											"isConditional": false,
+											"isDeprecated": false,
+											"deprecationReason": null
+										},
+										{
+											"responseName": "dist",
+											"fieldName": "dist",
+											"type": "Int",
+											"isConditional": false,
+											"isDeprecated": false,
+											"deprecationReason": null
+										},
+										{
+											"responseName": "insee",
+											"fieldName": "insee",
+											"type": "String",
+											"isConditional": false,
+											"isDeprecated": false,
+											"deprecationReason": null
+										},
+										{
+											"responseName": "city",
+											"fieldName": "city",
+											"type": "String",
+											"isConditional": false,
+											"isDeprecated": false,
+											"deprecationReason": null
+										},
+										{
+											"responseName": "addressLabel",
+											"fieldName": "addressLabel",
+											"type": "String",
+											"isConditional": false,
+											"isDeprecated": false,
+											"deprecationReason": null
+										}
+									],
+									"fragmentSpreads": [
+										"antennaFields"
+									],
+									"inlineFragments": []
+								}
+							],
+							"fragmentSpreads": []
+						},
+						{
+							"typeCondition": "HouseNumber",
+							"possibleTypes": [
+								"HouseNumber"
+							],
+							"fields": [
+								{
+									"responseName": "__typename",
+									"fieldName": "__typename",
+									"type": "String!",
+									"isConditional": false
+								},
+								{
+									"responseName": "houseNumber",
+									"fieldName": "houseNumber",
+									"type": "String",
+									"isConditional": false,
+									"isDeprecated": false,
+									"deprecationReason": null
+								},
+								{
+									"responseName": "street",
+									"fieldName": "street",
+									"type": "String",
+									"isConditional": false,
+									"isDeprecated": false,
+									"deprecationReason": null
+								},
+								{
+									"responseName": "city",
+									"fieldName": "city",
+									"type": "String",
+									"isConditional": false,
+									"isDeprecated": false,
+									"deprecationReason": null
+								},
+								{
+									"responseName": "zipCode",
+									"fieldName": "zipCode",
+									"type": "String",
+									"isConditional": false,
+									"isDeprecated": false,
+									"deprecationReason": null
+								},
+								{
+									"responseName": "nearestAntennaFromOrange",
+									"fieldName": "nearestAntenna",
+									"type": "NearestAntenna",
+									"args": [
+										{
+											"name": "provider",
+											"value": "ORANGE"
+										}
+									],
+									"isConditional": false,
+									"isDeprecated": false,
+									"deprecationReason": null,
+									"fields": [
+										{
+											"responseName": "__typename",
+											"fieldName": "__typename",
+											"type": "String!",
+											"isConditional": false
+										},
+										{
+											"responseName": "coordinates",
+											"fieldName": "coordinates",
+											"type": "GPS",
+											"isConditional": false,
+											"isDeprecated": false,
+											"deprecationReason": null,
+											"fields": [
+												{
+													"responseName": "latitude",
+													"fieldName": "latitude",
+													"type": "Float",
+													"isConditional": false,
+													"isDeprecated": false,
+													"deprecationReason": null
+												},
+												{
+													"responseName": "longitude",
+													"fieldName": "longitude",
+													"type": "Float",
+													"isConditional": false,
+													"isDeprecated": false,
+													"deprecationReason": null
+												}
+											],
+											"fragmentSpreads": [],
+											"inlineFragments": []
+										},
+										{
+											"responseName": "generation",
+											"fieldName": "generation",
+											"type": "String",
+											"isConditional": false,
+											"isDeprecated": false,
+											"deprecationReason": null
+										},
+										{
+											"responseName": "provider",
+											"fieldName": "provider",
+											"type": "String",
+											"isConditional": false,
+											"isDeprecated": false,
+											"deprecationReason": null
+										},
+										{
+											"responseName": "lastUpdate",
+											"fieldName": "lastUpdate",
+											"type": "String",
+											"isConditional": false,
+											"isDeprecated": false,
+											"deprecationReason": null
+										},
+										{
+											"responseName": "status",
+											"fieldName": "status",
+											"type": "String",
+											"isConditional": false,
+											"isDeprecated": false,
+											"deprecationReason": null
+										},
+										{
+											"responseName": "dist",
+											"fieldName": "dist",
+											"type": "Int",
+											"isConditional": false,
+											"isDeprecated": false,
+											"deprecationReason": null
+										},
+										{
+											"responseName": "insee",
+											"fieldName": "insee",
+											"type": "String",
+											"isConditional": false,
+											"isDeprecated": false,
+											"deprecationReason": null
+										},
+										{
+											"responseName": "city",
+											"fieldName": "city",
+											"type": "String",
+											"isConditional": false,
+											"isDeprecated": false,
+											"deprecationReason": null
+										},
+										{
+											"responseName": "addressLabel",
+											"fieldName": "addressLabel",
+											"type": "String",
+											"isConditional": false,
+											"isDeprecated": false,
+											"deprecationReason": null
+										}
+									],
+									"fragmentSpreads": [
+										"antennaFields"
+									],
+									"inlineFragments": []
+								},
+								{
+									"responseName": "nearestAntennaFromBouygues",
+									"fieldName": "nearestAntenna",
+									"type": "NearestAntenna",
+									"args": [
+										{
+											"name": "provider",
+											"value": "BOUYGUES_TELECOM"
+										}
+									],
+									"isConditional": false,
+									"isDeprecated": false,
+									"deprecationReason": null,
+									"fields": [
+										{
+											"responseName": "__typename",
+											"fieldName": "__typename",
+											"type": "String!",
+											"isConditional": false
+										},
+										{
+											"responseName": "coordinates",
+											"fieldName": "coordinates",
+											"type": "GPS",
+											"isConditional": false,
+											"isDeprecated": false,
+											"deprecationReason": null,
+											"fields": [
+												{
+													"responseName": "latitude",
+													"fieldName": "latitude",
+													"type": "Float",
+													"isConditional": false,
+													"isDeprecated": false,
+													"deprecationReason": null
+												},
+												{
+													"responseName": "longitude",
+													"fieldName": "longitude",
+													"type": "Float",
+													"isConditional": false,
+													"isDeprecated": false,
+													"deprecationReason": null
+												}
+											],
+											"fragmentSpreads": [],
+											"inlineFragments": []
+										},
+										{
+											"responseName": "generation",
+											"fieldName": "generation",
+											"type": "String",
+											"isConditional": false,
+											"isDeprecated": false,
+											"deprecationReason": null
+										},
+										{
+											"responseName": "provider",
+											"fieldName": "provider",
+											"type": "String",
+											"isConditional": false,
+											"isDeprecated": false,
+											"deprecationReason": null
+										},
+										{
+											"responseName": "lastUpdate",
+											"fieldName": "lastUpdate",
+											"type": "String",
+											"isConditional": false,
+											"isDeprecated": false,
+											"deprecationReason": null
+										},
+										{
+											"responseName": "status",
+											"fieldName": "status",
+											"type": "String",
+											"isConditional": false,
+											"isDeprecated": false,
+											"deprecationReason": null
+										},
+										{
+											"responseName": "dist",
+											"fieldName": "dist",
+											"type": "Int",
+											"isConditional": false,
+											"isDeprecated": false,
+											"deprecationReason": null
+										},
+										{
+											"responseName": "insee",
+											"fieldName": "insee",
+											"type": "String",
+											"isConditional": false,
+											"isDeprecated": false,
+											"deprecationReason": null
+										},
+										{
+											"responseName": "city",
+											"fieldName": "city",
+											"type": "String",
+											"isConditional": false,
+											"isDeprecated": false,
+											"deprecationReason": null
+										},
+										{
+											"responseName": "addressLabel",
+											"fieldName": "addressLabel",
+											"type": "String",
+											"isConditional": false,
+											"isDeprecated": false,
+											"deprecationReason": null
+										}
+									],
+									"fragmentSpreads": [
+										"antennaFields"
+									],
+									"inlineFragments": []
+								},
+								{
+									"responseName": "nearestAntennaFromSfr",
+									"fieldName": "nearestAntenna",
+									"type": "NearestAntenna",
+									"args": [
+										{
+											"name": "provider",
+											"value": "SFR"
+										}
+									],
+									"isConditional": false,
+									"isDeprecated": false,
+									"deprecationReason": null,
+									"fields": [
+										{
+											"responseName": "__typename",
+											"fieldName": "__typename",
+											"type": "String!",
+											"isConditional": false
+										},
+										{
+											"responseName": "coordinates",
+											"fieldName": "coordinates",
+											"type": "GPS",
+											"isConditional": false,
+											"isDeprecated": false,
+											"deprecationReason": null,
+											"fields": [
+												{
+													"responseName": "latitude",
+													"fieldName": "latitude",
+													"type": "Float",
+													"isConditional": false,
+													"isDeprecated": false,
+													"deprecationReason": null
+												},
+												{
+													"responseName": "longitude",
+													"fieldName": "longitude",
+													"type": "Float",
+													"isConditional": false,
+													"isDeprecated": false,
+													"deprecationReason": null
+												}
+											],
+											"fragmentSpreads": [],
+											"inlineFragments": []
+										},
+										{
+											"responseName": "generation",
+											"fieldName": "generation",
+											"type": "String",
+											"isConditional": false,
+											"isDeprecated": false,
+											"deprecationReason": null
+										},
+										{
+											"responseName": "provider",
+											"fieldName": "provider",
+											"type": "String",
+											"isConditional": false,
+											"isDeprecated": false,
+											"deprecationReason": null
+										},
+										{
+											"responseName": "lastUpdate",
+											"fieldName": "lastUpdate",
+											"type": "String",
+											"isConditional": false,
+											"isDeprecated": false,
+											"deprecationReason": null
+										},
+										{
+											"responseName": "status",
+											"fieldName": "status",
+											"type": "String",
+											"isConditional": false,
+											"isDeprecated": false,
+											"deprecationReason": null
+										},
+										{
+											"responseName": "dist",
+											"fieldName": "dist",
+											"type": "Int",
+											"isConditional": false,
+											"isDeprecated": false,
+											"deprecationReason": null
+										},
+										{
+											"responseName": "insee",
+											"fieldName": "insee",
+											"type": "String",
+											"isConditional": false,
+											"isDeprecated": false,
+											"deprecationReason": null
+										},
+										{
+											"responseName": "city",
+											"fieldName": "city",
+											"type": "String",
+											"isConditional": false,
+											"isDeprecated": false,
+											"deprecationReason": null
+										},
+										{
+											"responseName": "addressLabel",
+											"fieldName": "addressLabel",
+											"type": "String",
+											"isConditional": false,
+											"isDeprecated": false,
+											"deprecationReason": null
+										}
+									],
+									"fragmentSpreads": [
+										"antennaFields"
+									],
+									"inlineFragments": []
+								},
+								{
+									"responseName": "nearestAntennaFromFree",
+									"fieldName": "nearestAntenna",
+									"type": "NearestAntenna",
+									"args": [
+										{
+											"name": "provider",
+											"value": "FREE"
+										}
+									],
+									"isConditional": false,
+									"isDeprecated": false,
+									"deprecationReason": null,
+									"fields": [
+										{
+											"responseName": "__typename",
+											"fieldName": "__typename",
+											"type": "String!",
+											"isConditional": false
+										},
+										{
+											"responseName": "coordinates",
+											"fieldName": "coordinates",
+											"type": "GPS",
+											"isConditional": false,
+											"isDeprecated": false,
+											"deprecationReason": null,
+											"fields": [
+												{
+													"responseName": "latitude",
+													"fieldName": "latitude",
+													"type": "Float",
+													"isConditional": false,
+													"isDeprecated": false,
+													"deprecationReason": null
+												},
+												{
+													"responseName": "longitude",
+													"fieldName": "longitude",
+													"type": "Float",
+													"isConditional": false,
+													"isDeprecated": false,
+													"deprecationReason": null
+												}
+											],
+											"fragmentSpreads": [],
+											"inlineFragments": []
+										},
+										{
+											"responseName": "generation",
+											"fieldName": "generation",
+											"type": "String",
+											"isConditional": false,
+											"isDeprecated": false,
+											"deprecationReason": null
+										},
+										{
+											"responseName": "provider",
+											"fieldName": "provider",
+											"type": "String",
+											"isConditional": false,
+											"isDeprecated": false,
+											"deprecationReason": null
+										},
+										{
+											"responseName": "lastUpdate",
+											"fieldName": "lastUpdate",
+											"type": "String",
+											"isConditional": false,
+											"isDeprecated": false,
+											"deprecationReason": null
+										},
+										{
+											"responseName": "status",
+											"fieldName": "status",
+											"type": "String",
+											"isConditional": false,
+											"isDeprecated": false,
+											"deprecationReason": null
+										},
+										{
+											"responseName": "dist",
+											"fieldName": "dist",
+											"type": "Int",
+											"isConditional": false,
+											"isDeprecated": false,
+											"deprecationReason": null
+										},
+										{
+											"responseName": "insee",
+											"fieldName": "insee",
+											"type": "String",
+											"isConditional": false,
+											"isDeprecated": false,
+											"deprecationReason": null
+										},
+										{
+											"responseName": "city",
+											"fieldName": "city",
+											"type": "String",
+											"isConditional": false,
+											"isDeprecated": false,
+											"deprecationReason": null
+										},
+										{
+											"responseName": "addressLabel",
+											"fieldName": "addressLabel",
+											"type": "String",
+											"isConditional": false,
+											"isDeprecated": false,
+											"deprecationReason": null
+										}
+									],
+									"fragmentSpreads": [
+										"antennaFields"
+									],
+									"inlineFragments": []
+								}
+							],
+							"fragmentSpreads": []
+						}
+					]
+				}
+			],
+			"fragmentSpreads": [],
+			"inlineFragments": [],
+			"fragmentsReferenced": [
+				"antennaFields"
+			],
+			"sourceWithFragments": "query search($query: String!) {\n  search(query: $query) {\n    __typename\n    ... on Street {\n      street\n      city\n      zipCode\n    }\n    ... on City {\n      city\n      zipCode\n    }\n    ... on HouseNumber {\n      houseNumber\n      street\n      city\n      zipCode\n    }\n    nearestAntennaFromOrange: nearestAntenna(provider: ORANGE) {\n      ...antennaFields\n    }\n    nearestAntennaFromBouygues: nearestAntenna(provider: BOUYGUES_TELECOM) {\n      ...antennaFields\n    }\n    nearestAntennaFromSfr: nearestAntenna(provider: SFR) {\n      ...antennaFields\n    }\n    nearestAntennaFromFree: nearestAntenna(provider: FREE) {\n      ...antennaFields\n    }\n  }\n}\nfragment antennaFields on NearestAntenna {\n  __typename\n  coordinates {\n    latitude\n    longitude\n  }\n  generation\n  provider\n  lastUpdate\n  status\n  dist\n  insee\n  city\n  addressLabel\n}",
+			"operationId": "38fd56bde42926e432fc6584ef569c21b3c8d76090f0ca00acd42415fb8c5d4a"
+		}
+	],
+	"fragments": [
+		{
+			"typeCondition": "NearestAntenna",
+			"possibleTypes": [
+				"NearestAntenna"
+			],
+			"fragmentName": "antennaFields",
+			"filePath": "C:\\Users\\pc\\Dropbox\\github\\nc-gql\\apollo\\java\\src\\main\\graphql\\query.graphql",
+			"source": "fragment antennaFields on NearestAntenna {\n  __typename\n  coordinates {\n    latitude\n    longitude\n  }\n  generation\n  provider\n  lastUpdate\n  status\n  dist\n  insee\n  city\n  addressLabel\n}",
+			"fields": [
+				{
+					"responseName": "__typename",
+					"fieldName": "__typename",
+					"type": "String!",
+					"isConditional": false
+				},
+				{
+					"responseName": "coordinates",
+					"fieldName": "coordinates",
+					"type": "GPS",
+					"isConditional": false,
+					"isDeprecated": false,
+					"deprecationReason": null,
+					"fields": [
+						{
+							"responseName": "latitude",
+							"fieldName": "latitude",
+							"type": "Float",
+							"isConditional": false,
+							"isDeprecated": false,
+							"deprecationReason": null
+						},
+						{
+							"responseName": "longitude",
+							"fieldName": "longitude",
+							"type": "Float",
+							"isConditional": false,
+							"isDeprecated": false,
+							"deprecationReason": null
+						}
+					],
+					"fragmentSpreads": [],
+					"inlineFragments": []
+				},
+				{
+					"responseName": "generation",
+					"fieldName": "generation",
+					"type": "String",
+					"isConditional": false,
+					"isDeprecated": false,
+					"deprecationReason": null
+				},
+				{
+					"responseName": "provider",
+					"fieldName": "provider",
+					"type": "String",
+					"isConditional": false,
+					"isDeprecated": false,
+					"deprecationReason": null
+				},
+				{
+					"responseName": "lastUpdate",
+					"fieldName": "lastUpdate",
+					"type": "String",
+					"isConditional": false,
+					"isDeprecated": false,
+					"deprecationReason": null
+				},
+				{
+					"responseName": "status",
+					"fieldName": "status",
+					"type": "String",
+					"isConditional": false,
+					"isDeprecated": false,
+					"deprecationReason": null
+				},
+				{
+					"responseName": "dist",
+					"fieldName": "dist",
+					"type": "Int",
+					"isConditional": false,
+					"isDeprecated": false,
+					"deprecationReason": null
+				},
+				{
+					"responseName": "insee",
+					"fieldName": "insee",
+					"type": "String",
+					"isConditional": false,
+					"isDeprecated": false,
+					"deprecationReason": null
+				},
+				{
+					"responseName": "city",
+					"fieldName": "city",
+					"type": "String",
+					"isConditional": false,
+					"isDeprecated": false,
+					"deprecationReason": null
+				},
+				{
+					"responseName": "addressLabel",
+					"fieldName": "addressLabel",
+					"type": "String",
+					"isConditional": false,
+					"isDeprecated": false,
+					"deprecationReason": null
+				}
+			],
+			"fragmentSpreads": [],
+			"inlineFragments": []
+		}
+	],
+	"typesUsed": []
+}
