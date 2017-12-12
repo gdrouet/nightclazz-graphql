@@ -1,9 +1,9 @@
 const City = require('./City');
 
 class Street extends City {
-    constructor({street, postcode, city}, coordinates) {
+    constructor({name, postcode, city}, coordinates) {
         super({postcode: postcode, city: city}, coordinates);
-        this.street = street;
+        this.street = name;
     }
 
     isTypeOf(value) {

@@ -2,7 +2,7 @@ const Street = require('./Street');
 
 class HouseNumber extends Street {
     constructor({street, housenumber, postcode, city}, coordinates) {
-        super({postcode: postcode, city: city, street: street}, coordinates);
+        super({postcode: postcode, city: city, name: street}, coordinates);
         this.houseNumber = housenumber;
     }
 
