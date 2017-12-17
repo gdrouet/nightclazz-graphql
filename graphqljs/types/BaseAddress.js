@@ -13,7 +13,7 @@ class BaseAddress {
         this.coordinates = new GPS(coordinates, false);
     }
 
-    nearestAntenna(params) {
+    async nearestAntenna(params) {
         const qs = {
             'dataset': 'observatoire_2g_3g_4g',
             'geofilter.distance': this.coordinates.latitude + ',' + this.coordinates.longitude + ',' + MAX_ANTENNA_DISTANCE
@@ -23,18 +23,18 @@ class BaseAddress {
             qs[FACETS_FIELDS[key]] = params[key];
         }
 
-        return rp({
+        const result = await rp({
             uri: 'https://data.anfr.fr/api/records/1.0/search/',
             json: true,
             qs: qs
-        }).then(result => {
-            if (result.records.length == 0) {
-                return null;
-            }
-
-            const antenna = result.records[0].fields;
-            return new NearestAntenna(antenna);
         });
+
+        if (result.records.length == 0) {
+            return null;
+        }
+
+        const antenna = result.records[0].fields;
+        return new NearestAntenna(antenna);
     }
 }
 

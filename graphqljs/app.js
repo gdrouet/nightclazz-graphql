@@ -70,21 +70,22 @@ const schema = buildSchema(`
 
 // The root provides a resolver function for each API endpoint
 const root = {
-    search: ({query}) => {
+    search: async ({query}) => {
         const TYPES = {
             municipality : City,
             street : Street,
             housenumber : HouseNumber
         };
 
-        return AddressAddokFactory.create({
+        const address = await AddressAddokFactory.create({
             uri: 'https://api-adresse.data.gouv.fr/search/',
             json: true,
             qs: {q: query}
-        }).then(address => {
-            const clazz = TYPES[address.properties.type];
-            return new clazz(address.properties, address.geometry.coordinates);
         });
+
+
+        const clazz = TYPES[address.properties.type];
+        return new clazz(address.properties, address.geometry.coordinates);
     }
 };
 

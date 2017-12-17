@@ -127,7 +127,7 @@ Déclarez ensuite un type `City` avec des propriétés `coordinates`, `zipCode` 
 Ajoutez les classes qui correspondent à ces types.
 
 Dans votre objet `root`, ajouter une propriété `search` associée à une fonction qui permet de rechercher une `City`.
-Pour envoyer une requête HTTP avec la `query` vers l'API adresse, utilisez le projet `request`: https://github.com/request/request
+Pour envoyer une requête HTTP avec la `query` vers l'API adresse, utilisez le projet `request-promise`: https://github.com/request/request-promise
 
 Testez votre API dans `GraphiQL`.
 
