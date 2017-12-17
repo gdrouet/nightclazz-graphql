@@ -171,9 +171,7 @@ Modifiez le type `City` pour que l'argument `provider` soit de type `Provider`.
 Déclarez dans votre schéma l'énumération `Provider`: http://graphql.org/learn/schema/#enumeration-types
 
 Il faut pouvoir spécifier des valeurs différentes des clés à utiliser (par exemple `BOUGYES TELECOM` plutôt que `BOUYGUES_TELECOM`).
-`graphql-js` va détecter tous les types qui existent dans `ES6`.
-Par exemple, il a résolu votre classe `City` de façon transparente.
-En revanche, les énumérations n'existent pas dans `ES6`, il faut donc utiliser la notion de `resolvers` introduite par le projet `Apollo`: https://www.apollographql.com/docs/graphql-tools/resolvers.html
+Pour ce faire, il faut utiliser la notion de `resolvers` introduite par le projet `Apollo`: https://www.apollographql.com/docs/graphql-tools/resolvers.html
 Installez `graphql-tools` via `npm`.
 Ensuite dans votre variable `resolverMap`, ajoutez une propriété `Provider` qui sera un objet avec une propriété correspondant à chaque énumération associée à la valeur à utiliser.
 
